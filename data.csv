@@ -1,0 +1,431 @@
+,,,,,,,,
+,,,,,,,,
+Module Code,Quản lý nhân viên,,,,,,,
+Test requirement,"1. Thêm nhân viên 
+2. Chỉnh sửa thông tin nhân viên
+3. Xóa nhân viên
+4. Xem danh sách các nhân viên",,,,,,,
+Tester,Nguyễn Thị Mộng Hoài,,,,,,,
+Pass,Fail,Untested,N/A,,Number of Test cases,,,
+77,0,0,0,,77,,,
+,,,,,,,,
+ID,Test Case Description,Test Case Procedure,Expected Output,US/Module,Inter-test case Dependence,Result,Test date,Note
+,Function : Thêm nhân viên,,,,,,,
+,Check GUI-Thêm nhân viên,,,,,,,
+GUI-ThemNV-01,"Verify tổng quan màn hình ""Thêm nhân viên""","1. Truy cập URL hệ thống: https://system.hethongdatsan.vn
+2. Đăng nhập bằng tài khoản Chủ sân.
+3. Từ menu chính → chọn Quản lý nhân viên.
+4. Nhấn nút Thêm nhân viên.
+5. Quan sát toàn bộ form.","Hiển thị đầy đủ các thành phần: Họ tên, SĐT, Ca làm việc, Ghi chú, 
+Phân quyền, Trạng thái, Lưu, Hủy",UC-Quản lý nhân viên,None,,,
+GUI-ThemNV-02,Verify [Họ tên] Textbox,"1. Mở màn hình “Thêm nhân viên”.
+2. Quan sát trường nhập liệu [Họ tên].
+3. Click vào textbox [Họ tên].
+4. Thử nhập ký tự bất kỳ.
+","Status = Untested
+Textbox enable 
+default blank
+max-length = 50 ký tự.",UC-Quản lý nhân viên,None,,,
+GUI-ThemNV-03,Verify [Số điện thoại] Textbox,"1. Mở màn hình “Thêm nhân viên”.
+2. Quan sát textbox [Số điện thoại].
+3. Click vào textbox [Số điện thoại].
+4. Thử nhập dữ liệu bất kỳ.
+","Status = Untested
+Default = blank
+Max-length = 15",UC-Quản lý nhân viên,None,,,
+GUI-ThemNV-04,Verify [Ca làm việc] Combobox,"1. Mở màn hình “Thêm nhân viên”.
+2. Click vào combobox [Ca làm việc].
+3. Quan sát danh sách giá trị hiển thị.
+","Status = Untested
+Danh sách hiển thị các ca làm việc
+(Ca sáng, Ca chiều, Ca tối)",UC-Quản lý nhân viên,None,,,
+GUI-ThemNV-05,Verify [Ghi chú] Textbox,"1. Mở màn hình “Thêm nhân viên”.
+2. Quan sát textbox [Ghi chú].
+3. Click vào textbox [Ghi chú].
+4. Thử nhập nội dung bất kỳ.
+","Status = Untested
+Default = blank
+Max-length = 200",UC-Quản lý nhân viên,None,,,
+GUI-ThemNV-06,Verify [Phân quyền] Combobox,"1. Mở màn hình “Thêm nhân viên”.
+2. Click vào combobox [Phân quyền].
+3. Quan sát danh sách quyền hiển thị.
+","Status = Untested
+Danh sách hiển thị các quyền: 
+Nhân viên, Quản lý,...",UC-Quản lý nhân viên,None,,,
+GUI-ThemNV-07,Verify [Trạng thái] Combobox,"1. Mở màn hình “Thêm nhân viên”.
+2. Click vào combobox [Trạng thái].
+3. Quan sát danh sách giá trị.
+","Status = Untested
+",UC-Quản lý nhân viên,None,,,
+GUI-ThemNV-08,Verify button [Lưu],"1. Mở màn hình “Thêm nhân viên”.
+2. Quan sát nút [Lưu].
+","Status = Untested
+Giá trị gồm: Đang làm, Nghỉ việc",UC-Quản lý nhân viên,None,,,
+GUI-ThemNV-09,Verify button [Hủy],"1. Mở màn hình “Thêm nhân viên”.
+2. Quan sát nút [Hủy].
+","Status = Untested
+",UC-Quản lý nhân viên,None,,,
+,Check FUNC-Thêm nhân viên,,,,,,,
+FUNC-ThemNV-10,Verify mở form Thêm nhân viên,"1. Đăng nhập hệ thống bằng tài khoản Chủ sân.
+2. Từ menu chính, chọn “Quản lý nhân viên”.
+3. Nhấn nút “Thêm nhân viên”.
+",Form hiển thị đúng layout.,,,,,
+FUNC-ThemNV-11,Validate bỏ trống họ tên,"1. Mở form “Thêm nhân viên”.
+2. Để trống trường [Họ tên].
+3. Nhập [Số điện thoại] = “0912345678”.
+4. Chọn [Ca làm việc] = Ca sáng.
+5. Chọn [Phân quyền] = Nhân viên.
+6. Chọn [Trạng thái] = Đang làm.
+7. Nhấn nút “Lưu”.
+",Báo lỗi: “Vui lòng nhập họ tên nhân viên!”.,UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-12,Họ tên > 50 ký tự,"1. Mở form “Thêm nhân viên”.
+2. Nhập [Họ tên] gồm 51 ký tự.
+3. Nhập đầy đủ các trường còn lại hợp lệ.
+4. Nhấn “Lưu”.
+","Hiển thị thông báo: “Vui lòng nhập họ tên nhân viên!” 
+và trỏ chuột tại [Họ tên].",UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-13,Họ tên chứa ký tự đặc biệt,"1. Mở form “Thêm nhân viên”.
+2. Nhập [Họ tên] = “Nam@abc”.
+3. Nhập đầy đủ các trường còn lại hợp lệ.
+4. Nhấn “Lưu”.
+",Hiển thị lỗi không vượt quá 50 ký tự.,UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-14,SĐT trống,"1. Mở form “Thêm nhân viên”.
+2. Nhập [Họ tên] = “Nguyễn Văn A”.
+3. Để trống [Số điện thoại].
+4. Nhập đầy đủ các trường còn lại hợp lệ.
+5. Nhấn “Lưu”.
+",Báo lỗi ký tự không hợp lệ.,UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-15,SĐT có chữ,"1. Mở form “Thêm nhân viên”.
+2. Nhập [Họ tên] hợp lệ.
+3. Nhập [Số điện thoại] = “09abc12345”.
+4. Nhập đầy đủ các trường còn lại.
+5. Nhấn “Lưu”.
+",Báo lỗi SĐT.,UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-16,Không chọn ca làm việc,"1. Mở form “Thêm nhân viên”.
+2. Nhập đầy đủ thông tin hợp lệ ngoại trừ [Ca làm việc].
+3. Nhấn “Lưu”.
+",Báo lỗi: SĐT phải là số.,UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-17,Không chọn phân quyền,"1. Mở form “Thêm nhân viên”.
+2. Nhập đầy đủ thông tin hợp lệ ngoại trừ [Phân quyền].
+3. Nhấn “Lưu”.
+",Báo lỗi.,UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-18,Không chọn trạng thái,"1. Mở form “Thêm nhân viên”.
+2. Nhập đầy đủ thông tin hợp lệ ngoại trừ [Trạng thái].
+3. Nhấn “Lưu”.
+",Báo lỗi.,UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-19,Nhấn Hủy,"1. Mở form “Thêm nhân viên”.
+2. Nhập dữ liệu bất kỳ vào các trường.
+3. Nhấn nút “Hủy”.
+","Quay lại danh sách, không lưu.",UC-Quản lý nhân viên,None,,,
+FUNC-ThemNV-20,Lưu thành công,"1. Mở form “Thêm nhân viên”.
+2. Nhập:
+   - Họ tên: Nguyễn Văn A
+   - Số điện thoại: 0912345678
+   - Ca làm việc: Ca sáng
+   - Phân quyền: Nhân viên
+   - Trạng thái: Đang làm
+   - Ghi chú: Không
+3. Nhấn nút “Lưu”.
+",Lưu thành công + chuyển về danh sách + dữ liệu hiển thị đúng.,UC-Quản lý nhân viên,None,,,
+,Function : Chỉnh sửa thông tin nhân viên,,,,,,,
+,Check GUI-Chỉnh sửa thông tin nhân viên,,,,,,,
+GUI-ChinhSuaNV-21,"Verify giao diện tổng thể màn hình 
+chỉnh sửa nhân viên","1. Truy cập URL hệ thống: https://system.hethongdatsan.vn
+2. Đăng nhập bằng tài khoản Chủ sân hợp lệ.
+3. Từ menu chính, chọn “Quản lý nhân viên”.
+4. Tại danh sách nhân viên, chọn một nhân viên bất kỳ.
+5. Nhấn nút “Chỉnh sửa”.
+6. Quan sát toàn bộ giao diện màn hình.
+","Hiển thị form chỉnh sửa gồm: Họ tên, SĐT, Ca làm việc, 
+Ghi chú, Phân quyền, Trạng thái, nút Lưu, nút Hủy.",UC-Quản lý nhân viên,None,,,
+GUI-ChinhSuaNV-22,Verify [Họ tên] Textbox,"1. Mở form “Chỉnh sửa nhân viên”.
+2. Quan sát giá trị hiển thị trong textbox [Họ tên].
+3. Click vào textbox [Họ tên].
+4. Thử chỉnh sửa nội dung.
+","Status = Untested
+Default = dữ liệu nhân viên hiện tại
+Max-length = 50",UC-Quản lý nhân viên,None,,,
+GUI-ChinhSuaNV-23,Verify [Số điện thoại] Textbox,"1. Mở form “Chỉnh sửa nhân viên”.
+2. Quan sát textbox [Số điện thoại].
+3. Click và nhập thử giá trị mới.
+","Status = Untested
+Default = dữ liệu nhân viên hiện tại
+Max-length = 15",UC-Quản lý nhân viên,None,,,
+GUI-ChinhSuaNV-24,Verify [Ca làm việc] Combobox,"1. Mở form “Chỉnh sửa nhân viên”.
+2. Click vào combobox [Ca làm việc].
+3. Quan sát danh sách hiển thị.
+","Status = Untested
+Danh sách: Ca sáng, Ca chiều, Ca tối",UC-Quản lý nhân viên,None,,,
+GUI-ChinhSuaNV-25,Verify [Ghi chú] Textbox,"1. Mở form “Chỉnh sửa nhân viên”.
+2. Quan sát nội dung mặc định của textbox [Ghi chú].
+3. Nhập thử một đoạn nội dung mới.
+","Status = Untested
+Default = dữ liệu nhân viên hiện tại
+Max-length = 200",UC-Quản lý nhân viên,None,,,
+GUI-ChinhSuaNV-26,Verify [Phân quyền] Combobox,"1. Mở form “Chỉnh sửa nhân viên”.
+2. Click vào combobox [Phân quyền].
+3. Quan sát danh sách quyền.
+","Status = Untested
+Danh sách: Nhân viên, Quản lý,..",UC-Quản lý nhân viên,None,,,
+GUI-ChinhSuaNV-27,Verify [Trạng thái] Combobox,"1. Mở form “Chỉnh sửa nhân viên”.
+2. Click vào combobox [Trạng thái].
+3. Quan sát danh sách giá trị.
+","Status = Untested
+Giá trị: Đang làm, Nghỉ việc",UC-Quản lý nhân viên,None,,,
+GUI-ChinhSuaNV-28,Verify [Lưu] Button,"1. Mở form “Chỉnh sửa nhân viên”.
+2. Quan sát nút [Lưu].
+3. Hover và nhấn thử nút.
+","Status = Untested
+",UC-Quản lý nhân viên,None,,,
+GUI-ChinhSuaNV-29,Verify [Hủy] Button,"1. Mở form “Chỉnh sửa nhân viên”.
+2. Quan sát nút [Hủy].
+3. Nhấn nút [Hủy].
+","Status = Untested
+Cho phép hủy thao tác.",UC-Quản lý nhân viên,None,,,
+,Check FUNC-Chỉnh sửa thông tin nhân viên,,,,,,,
+FUNC-ChinhSuaNV-30,Mở màn hình chỉnh sửa nhân viên,"1. Đăng nhập hệ thống bằng tài khoản Chủ sân.
+2. Từ menu chính, chọn “Quản lý nhân viên”.
+3. Tại danh sách nhân viên, chọn một nhân viên bất kỳ.
+4. Nhấn nút “Chỉnh sửa”.
+",Hiển thị form chứa thông tin nhân viên cần sửa.,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-31,Không nhập họ tên,"1. Mở form “Chỉnh sửa thông tin nhân viên”.
+2. Xóa toàn bộ nội dung trong textbox [Họ tên].
+3. Nhấn nút [Lưu].
+",Hiển thị thông báo: “Vui lòng nhập họ tên nhân viên!”.,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-32,Nhập họ tên quá 50 ký tự,"1. Mở form chỉnh sửa nhân viên.
+2. Nhập chuỗi dài hơn 50 ký tự vào textbox [Họ tên] 
+   (ví dụ: 51 ký tự “aaaaaaaa…”).
+3. Nhấn nút [Lưu].
+","Hiển thị thông báo: “Vui lòng không nhập quá 50 ký tự!”
+",UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-33,Nhập họ tên toàn dấu cách,"1. Mở form chỉnh sửa nhân viên.
+2. Nhập toàn dấu cách vào textbox [Họ tên].
+3. Nhấn nút [Lưu].
+",Hiển thị thông báo: “Vui lòng không nhập toàn ký tự trống!”,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-34,Nhập họ tên có ký tự đặc biệt,"1. Mở form chỉnh sửa nhân viên.
+2. Nhập họ tên chứa ký tự đặc biệt (ví dụ: “Nguyễn @B”).
+3. Nhấn nút [Lưu].
+",Hiển thị: “Vui lòng nhập họ tên không có ký tự đặc biệt!”,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-35,Nhập họ tên có ký tự số,"1. Mở form chỉnh sửa nhân viên.
+2. Nhập họ tên chứa số (ví dụ: “Trần Anh123”).
+3. Nhấn nút [Lưu].
+",Hiển thị: “Vui lòng nhập họ tên không có ký tự số!”,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-36,Xóa số điện thoại,"1. Mở form chỉnh sửa nhân viên.
+2. Xóa toàn bộ nội dung trong textbox [Số điện thoại].
+3. Nhấn nút [Lưu].
+",Hiển thị: “Vui lòng nhập số điện thoại!”.,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-37,Nhập số điện thoại quá 15 ký tự,"1. Mở form chỉnh sửa nhân viên.
+2. Nhập số điện thoại dài hơn 15 ký tự 
+   (ví dụ: “0123456789123456”).
+3. Nhấn nút [Lưu].
+",Hiển thị thông báo: “Vui lòng không nhập quá 15 ký tự!”,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-38,Nhập số điện thoại có chữ cái,"1. Mở form chỉnh sửa nhân viên.
+2. Nhập số điện thoại có chứa chữ cái 
+   (ví dụ: “09abc1234”).
+3. Nhấn nút [Lưu].
+","Hiển thị thông báo: “Vui lòng không nhập chữ cái!”
+",UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-39,Nhập số điện thoại có ký tự đặc biệt,"1. Mở form chỉnh sửa nhân viên.
+2. Nhập số điện thoại có ký tự đặc biệt 
+   (ví dụ: “09@123456”).
+3. Nhấn nút [Lưu].
+",Hiển thị thông báo: “Vui lòng không nhập ký tự đặc biệt!”,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-40,Không chọn ca làm việc,"1. Mở form chỉnh sửa nhân viên.
+2. Bỏ chọn hoặc để trống combobox [Ca làm việc].
+3. Nhấn nút [Lưu].
+",Hiển thị thông báo: “Vui lòng chọn ca làm việc!”,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-41,Không chọn phân quyền,"1. Mở form chỉnh sửa nhân viên.
+2. Để trống combobox [Phân quyền].
+3. Nhấn nút [Lưu].
+",Hiển thị thông báo: “Vui lòng chọn phân quyền!”,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-42,Không chọn trạng thái nhân viên,"1. Mở form chỉnh sửa nhân viên.
+2. Để trống combobox [Trạng thái].
+3. Nhấn nút [Lưu].
+",Hiển thị thông báo: “Vui lòng chọn trạng thái nhân viên!”,UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-43,Nhấn [Hủy],"1. Mở form chỉnh sửa nhân viên.
+2. Thay đổi một hoặc nhiều thông tin bất kỳ.
+3. Nhấn nút [Hủy].
+","Hệ thống hủy thao tác, quay lại danh sách nhân viên, 
+không lưu thay đổi.",UC-Quản lý nhân viên,None,,,
+FUNC-ChinhSuaNV-44,Cập nhật thông tin hợp lệ,"1. Mở form chỉnh sửa nhân viên.
+2. Nhập đầy đủ dữ liệu hợp lệ cho tất cả các trường.
+3. Nhấn nút [Lưu].
+","Hiển thị: “Cập nhật thông tin nhân viên thành công!”
+và thông tin mới hiển thị trong danh sách",UC-Quản lý nhân viên,None,,,
+,Function : Xóa nhân viên,,,,,,,
+,Check GUI - Xóa nhân viên,,,,,,,
+GUI-XoaNV-45,Verify giao diện tổng thể màn hình xóa nhân viên,"1. Truy cập https://system.hethongdatsan.vn
+2. Đăng nhập bằng tài khoản Chủ sân hợp lệ.
+3. Từ menu chính, chọn “Quản lý nhân viên”.
+4. Tại danh sách nhân viên, chọn một nhân viên bất kỳ.
+5. Nhấn nút “Xóa”.
+6. Quan sát toàn bộ giao diện form hiển thị.","Hiển thị đúng form Xóa nhân viên gồm: Họ tên, SĐT, Ca làm việc, 
+Ghi chú, Phân quyền, Trạng thái, nút Xóa, nút Hủy. ",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-46,Verify [Họ tên] Textbox,"1. Mở form “Xóa nhân viên”.
+2. Quan sát giá trị hiển thị tại textbox [Họ tên].
+3. Click vào textbox để kiểm tra khả năng chỉnh sửa.
+","Status = Untested
+Default = dữ liệu nhân viên hiện tại
+",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-47,Verify [Số điện thoại] Textbox,"1. Mở form “Xóa nhân viên”.
+2. Quan sát trường [Số điện thoại].
+3. Thử click và nhập dữ liệu mới.
+","Status = Untested
+Default = dữ liệu nhân viên hiện tại
+",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-48,Verify [Ca làm việc] Combobox,"1. Mở form “Xóa nhân viên”.
+2. Click vào combobox [Ca làm việc].
+3. Quan sát khả năng mở dropdown.
+","Status = Untested
+Giá trị: Ca sáng, Ca chiều, Ca tối",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-49,Verify [Ghi chú] Textbox,"1. Mở form “Xóa nhân viên”.
+2. Quan sát nội dung hiển thị tại textbox [Ghi chú].
+3. Thử click và nhập dữ liệu.
+","Status = Untested
+Default = dữ liệu nhân viên hiện tại
+",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-50,Verify [Phân quyền] Combobox,"1. Mở form “Xóa nhân viên”.
+2. Click vào combobox [Phân quyền].
+3. Quan sát khả năng mở dropdown.
+","Status = Untested
+Giá trị: Nhân viên, Quản lý,...",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-51,Verify [Trạng thái] Combobox,"1. Mở form “Xóa nhân viên”.
+2. Quan sát combobox [Trạng thái].
+3. Thử click để kiểm tra thao tác.
+","Status = Untested
+Default = dữ liệu nhân viên hiện tại
+",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-52,Verify [Xóa] Button,"1. Mở form “Xóa nhân viên”.
+2. Quan sát nút [Xóa].
+3. Di chuột (hover) để kiểm tra hiệu ứng.
+4. Nhấn nút [Xóa].
+","Status = Untested
+",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-53,Verify [Hủy] Button,"1. Mở form “Xóa nhân viên”.
+2. Nhấn nút [Hủy].
+","Status = Untested
+Cho phép quay lại danh sách nhân viên.",UC-Quản lý nhân viên,None,,,
+GUI-XoaNV-54,Verify Popup xác nhận xóa,"1. Mở form “Xóa nhân viên”.
+2. Nhấn nút [Xóa].
+3. Quan sát popup xác nhận hiển thị.
+","Popup hiển thị: “Bạn có chắc chắn muốn xóa nhân viên này không?” 
++ nút Xóa, Hủy.",UC-Quản lý nhân viên,None,,,
+,Check FUNC-Xóa nhân viên,,,,,,,
+FUNC-XoaNV-55,Mở màn hình xóa,"1. Truy cập URL hệ thống: https://system.hethongdatsan.vn
+2. Đăng nhập bằng tài khoản Chủ sân hợp lệ.
+3. Từ menu chính, chọn “Quản lý nhân viên”.
+4. Tại danh sách nhân viên, chọn một nhân viên bất kỳ.
+5. Nhấn nút “Xóa”.
+","Mở form Xóa nhân viên, hiển thị đúng thông tin nhân viên.",UC-Quản lý nhân viên,None,,,
+FUNC-XoaNV-56,Nhấn nút [Xóa] để mở popup xác nhận,"1. Mở form “Xóa nhân viên”.
+2. Quan sát thông tin nhân viên hiển thị.
+3. Nhấn nút [Xóa] trên form.
+",Popup xác nhận xuất hiện.,UC-Quản lý nhân viên,None,,,
+FUNC-XoaNV-57,Nhấn [Hủy] trên hộp thoại xác nhận,"1. Mở form “Xóa nhân viên”.
+2. Nhấn nút [Xóa] để mở popup xác nhận.
+3. Trong popup xác nhận, nhấn nút [Hủy].
+","Popup đóng, không xóa nhân viên, quay lại form Xóa nhân viên.
+",UC-Quản lý nhân viên,None,,,
+FUNC-XoaNV-58,Xác nhận xóa nhân viên,"1. Mở form “Xóa nhân viên”.
+2. Nhấn nút [Xóa] để mở popup xác nhận.
+3. Trong popup, nhấn nút [Xóa]/[Đồng ý].
+","Thông báo: “Xóa nhân viên thành công!”; 
+nhân viên biến mất khỏi danh sách.",UC-Quản lý nhân viên,None,,,
+FUNC-XoaNV-59,Xóa nhân viên không tồn tại,"1. Mở form “Xóa nhân viên” của nhân viên A.
+2. Mở một tab/trình duyệt khác.
+3. Đăng nhập hệ thống và xóa nhân viên A trước.
+4. Quay lại tab đang mở form xóa.
+5. Nhấn nút [Xóa].
+","Hiển thị thông báo: “Nhân viên không tồn tại hoặc 
+đã bị xóa trước đó!”.",UC-Quản lý nhân viên,None,,,
+FUNC-XoaNV-60,Xóa toàn bộ nhân viên (nếu có nút),"1. Truy cập màn hình danh sách nhân viên.
+2. Nhấn nút [Xóa tất cả] (nếu hệ thống hỗ trợ).
+3. Xác nhận thao tác trong popup xác nhận.
+","Hệ thống xóa tất cả nhân viên.
+Hiển thị thông báo xác nhận thành công.",UC-Quản lý nhân viên,None,,,
+FUNC-XoaNV-61,Kiểm tra cập nhật danh sách sau xóa,"1. Thực hiện xóa một hoặc nhiều nhân viên thành công.
+2. Quay lại màn hình danh sách nhân viên.
+3. Quan sát danh sách hiển thị.
+",Nhân viên vừa xóa không còn hiển thị trong danh sách.,UC-Quản lý nhân viên,None,,,
+,Function : Xem danh sách các nhân viên,,,,,,,
+,Check GUI - Xem danh sách các nhân viên,,,,,,,
+GUI-XemNV-62,"Verify giao diện tổng thể màn hình 
+danh sách nhân viên","1. Mở trình duyệt web.
+2. Truy cập URL hệ thống: https://system.example.vn
+3. Đăng nhập bằng tài khoản Chủ sân hợp lệ.
+4. Từ menu bên trái, chọn “Quản lý nhân viên”.
+5. Hệ thống điều hướng đến màn hình danh sách nhân viên.
+6. Quan sát tổng thể giao diện: tiêu đề trang, thanh tìm kiếm,
+   nút “Thêm nhân viên”, bảng danh sách và các cột hiển thị.
+","Hiển thị đúng bảng gồm các cột: STT, Họ tên, SĐT, Ca làm việc, 
+Phân quyền, Trạng thái, Thao tác.",UC-Quản lý nhân viên,None,,,
+GUI-XemNV-63,Verify cột STT,"1. Mở màn hình danh sách nhân viên.
+2. Quan sát cột Họ tên trên nhiều dòng khác nhau.
+3. Đối chiếu thông tin hiển thị với dữ liệu nhân viên trong hệ thống.
+","STT hiển thị số thứ tự tăng dần đúng theo danh sách (1,2,3,…).",UC-Quản lý nhân viên,None,,,
+GUI-XemNV-64,Verify cột Họ tên,"1. Quan sát cột Số điện thoại của một số nhân viên bất kỳ.
+2. Kiểm tra định dạng hiển thị.
+3. Đối chiếu với dữ liệu đã lưu trong hệ thống.
+","Họ tên hiển thị đầy đủ, không bị cắt, không sai dữ liệu.",UC-Quản lý nhân viên,None,,,
+GUI-XemNV-65,Verify cột Số điện thoại,"1. Quan sát cột Số điện thoại trên một số dòng bất kỳ.
+2. Đảm bảo giá trị khớp với database.","Hiển thị đúng, không bị rút gọn, không sai format.",UC-Quản lý nhân viên,None,,,
+GUI-XemNV-66,Verify cột Ca làm việc,"1. Quan sát cột Ca làm việc của từng nhân viên.
+2. Kiểm tra giá trị hiển thị thuộc các ca hợp lệ.
+",Dữ liệu ca làm việc hiển thị đúng với thông tin nhân viên.,UC-Quản lý nhân viên,None,,,
+GUI-XemNV-67,Verify cột Phân quyền,"1. Quan sát cột Phân quyền trên danh sách nhân viên.
+2. Kiểm tra các giá trị hiển thị.
+",Hiển thị đúng phân quyền tương ứng.,UC-Quản lý nhân viên,None,,,
+GUI-XemNV-68,Verify cột Trạng thái,"1. Quan sát cột Trạng thái của từng dòng trong danh sách.
+2. Kiểm tra nội dung hiển thị.
+",Dữ liệu trạng thái hiển thị đầy đủ và chính xác.,UC-Quản lý nhân viên,None,,,
+GUI-XemNV-69,Verify cột Thao tác,"1. Quan sát cột Thao tác của từng dòng nhân viên.
+2. Kiểm tra sự tồn tại của các nút Chỉnh sửa và Xóa.
+3. Thử click vào từng nút.
+","Nút Chỉnh sửa/Xóa hiển thị đúng dòng, trạng thái enable.",UC-Quản lý nhân viên,None,,,
+GUI-XemNV-70,Verify thanh tìm kiếm,"1. Quan sát ô tìm kiếm trên màn hình danh sách nhân viên.
+2. Click vào ô tìm kiếm để kiểm tra có thể nhập liệu.
+3. Nhập từ khóa tìm kiếm, ví dụ: “Nam”.
+","Ô tìm kiếm enable, text nhập được, dùng để lọc danh sách.",UC-Quản lý nhân viên,None,,,
+GUI-XemNV-71,Verify nút Thêm nhân viên,"1. Quan sát nút “Thêm nhân viên” trên màn hình danh sách.
+2. Nhấn nút “Thêm nhân viên”.
+","Nút enable, click vào mở form “Thêm nhân viên”.",UC-Quản lý nhân viên,None,,,
+,Check FUNC-Xem danh sách các nhân viên,,,,,,,
+FUNC-XemNV-72,Load màn hình danh sách nhân viên,"1. Mở trình duyệt web.
+2. Truy cập hệ thống và đăng nhập bằng tài khoản Chủ sân hợp lệ.
+3. Từ menu chính bên trái, chọn “Quản lý nhân viên”.
+4. Quan sát hệ thống tự động load màn hình danh sách nhân viên.
+","Hiển thị đúng tất cả các cột: STT, Họ tên, SĐT, Ca làm việc, 
+Phân quyền, Trạng thái, Thao tác.",UC-Quản lý nhân viên,None,,,
+FUNC-XemNV-73,Kiểm tra hiển thị số thứ tự (STT),"1. Mở màn hình danh sách nhân viên.
+2. Quan sát cột STT tại dòng đầu tiên.
+3. Kéo xuống cuối danh sách.
+4. Đối chiếu STT với tổng số nhân viên đang hiển thị.
+","STT tăng dần, không trùng, không nhảy số.",UC-Quản lý nhân viên,None,,,
+FUNC-XemNV-74,Kiểm tra dữ liệu nhân viên hiển thị đúng,"1. Chọn ngẫu nhiên từ 1 đến 3 nhân viên trong danh sách.
+2. Lấy dữ liệu tương ứng của các nhân viên này trong database
+   (hoặc dữ liệu test đã biết trước).
+3. So sánh từng trường thông tin:
+   - Họ tên
+   - Số điện thoại
+   - Ca làm việc
+   - Phân quyền
+   - Trạng thái
+",Dữ liệu hiển thị đúng và đầy đủ.,UC-Quản lý nhân viên,None,,,
+FUNC-XemNV-75,Kiểm tra cột Thao tác,"1. Tại danh sách nhân viên, chọn một dòng bất kỳ.
+2. Nhấn nút “Chỉnh sửa”.
+3. Quan sát hệ thống mở form chỉnh sửa thông tin nhân viên.
+4. Nhấn Hủy hoặc quay lại danh sách nhân viên.
+",Dữ liệu trên UI trùng khớp database.,UC-Quản lý nhân viên,None,,,
+FUNC-XemNV-76,Kiểm tra nút Thêm nhân viên,"1. Tại màn hình danh sách nhân viên.
+2. Nhấn nút “Thêm nhân viên”.
+3. Quan sát điều hướng của hệ thống.
+",Mở form Thêm nhân viên thành công,UC-Quản lý nhân viên,None,,,
+FUNC-XemNV-77,Kiểm tra thanh tìm kiếm,"1. Tại màn hình danh sách nhân viên, nhập từ khóa “Nam” 
+vào ô tìm kiếm.
+2. Nhấn Enter hoặc chờ hệ thống tự động lọc.
+3. Quan sát danh sách kết quả hiển thị.
+4. Xóa nội dung tìm kiếm.
+5. Nhập từ khóa không tồn tại, ví dụ: “zzz999”.
+6. Quan sát kết quả.
+","Case 1: Danh sách lọc đúng theo từ khóa.
+Case 2: Hiển thị “Không tìm thấy dữ liệu”.",UC-Quản lý nhân viên,None,,,
