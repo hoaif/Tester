@@ -1,4 +1,4 @@
-# Tester
+# TestCase
 
 This repository contains black-box test cases for the Employee Management module.
 
