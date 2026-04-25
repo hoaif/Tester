@@ -7,7 +7,7 @@ Test requirement,"1. Thêm nhân viên
 4. Xem danh sách các nhân viên",,,,,,,
 Tester,Nguyễn Thị Mộng Hoài,,,,,,,
 Pass,Fail,Untested,N/A,,Number of Test cases,,,
-77,0,0,0,,77,,,
+0,0,0,0,,77,,,
 ,,,,,,,,
 ID,Test Case Description,Test Case Procedure,Expected Output,US/Module,Inter-test case Dependence,Result,Test date,Note
 ,Function : Thêm nhân viên,,,,,,,
